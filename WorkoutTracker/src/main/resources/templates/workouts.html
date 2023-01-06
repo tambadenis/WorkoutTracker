@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Workouts</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body class="h-100">
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-auto">
+            <h1 th:style="'text-align: center;'">Workouts</h1>
+            <div class="table-responsive">
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="workout : ${workouts}">
+                            <td th:text="${workout.id}"></td>
+                            <td th:text="${#dates.format(workout.date, 'MM/dd/yyyy')}"></td>
+                            <td th:text="${workout.type}"></td>
+                            <td>
+                                <a th:href="@{/workouts/{id}(id=${workout.id})}">View</a>
+                                <a th:href="@{/workouts/edit/{id}(id=${workout.id})}">Edit</a>
+                                <a th:href="@{/workouts/delete/{id}(id=${workout.id})}">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <form th:action="@{/workouts/add}" th:object="${workoutType}" method="get">
+                <div class="text-center">
+                    <button type="submit" id="addworkout" class="btn btn-primary" th:value="workout">Add Workout</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
