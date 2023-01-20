@@ -1,0 +1,62 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--    <title>Update Set</title>-->
+<!--    &lt;!&ndash; Bootstrap CSS and JS &ndash;&gt;-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"-->
+<!--          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">-->
+<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"-->
+<!--            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"-->
+<!--            crossorigin="anonymous"></script>-->
+
+<!--    &lt;!&ndash; Special version of Bootstrap that only affects content wrapped in .bootstrap-iso &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />-->
+
+<!--    &lt;!&ndash; Inline CSS based on choices in "Settings" tab &ndash;&gt;-->
+<!--    <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial,-->
+<!--  Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form-->
+<!--  button:hover{color: white !important;} .asteriskField{color: red;} h1{text-align: center}</style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<body class="h-100">-->
+<!--&lt;!&ndash; HTML Form (wrapped in a .bootstrap-iso div) &ndash;&gt;-->
+<!--<div class="bootstrap-iso h-100">-->
+<!--    <div class="container h-100">-->
+<!--        <div class="row h-100 justify-content-center align-items-center">-->
+<!--            <div class="col-md-6 col-sm-6 col-xs-12">-->
+<!--                <h1>Update Set</h1>-->
+<!--                <form th:action="@{/updateSet}" th:object="${set}" method="post">-->
+<!--                    <input type="hidden" th:field="*{id}"/>-->
+<!--                    <div class="form-group">-->
+<!--                        <label class="control-label">Exercise Name:</label>-->
+<!--                        <input class="form-control" type="text" th:field="*{exerciseName}"/>-->
+<!--                        <br>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label class="control-label">Set Number:</label>-->
+<!--                        <input class="form-control" type="number" th:field="*{setNumber}"/>-->
+<!--                        <br>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label class="control-label">Number of reps:</label>-->
+<!--                        <input class="form-control" type="number" th:field="*{numberOfReps}"/>-->
+<!--                        <br>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label class="control-label">Weight used:</label>-->
+<!--                        <input class="form-control" type="number" th:field="*{weightUsed}"/>-->
+<!--                        <br>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <input class="btn btn-primary" type="submit" value="Update Set"/>-->
+<!--                    </div>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->

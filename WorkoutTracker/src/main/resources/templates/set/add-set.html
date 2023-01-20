@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add Set</title>
+  <!-- Bootstrap CSS and JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+          integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+          crossorigin="anonymous"></script>
+  <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
+  <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+  <!-- Inline CSS based on choices in "Settings" tab -->
+  <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial,
+  Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form
+  button:hover{color: white !important;} .asteriskField{color: red;} h1{text-align: center}</style>
+</head>
+<body class="h-100">
+<!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+<div class="bootstrap-iso h-100">
+  <div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <h1 th:style="'text-align: center;'">Workouts</h1>
+        <div th:with="id=${workoutId}">
+          <form th:action="@{/workouts/{id}/sets/add(id=${id})}" th:object="${set}" method="post">
+          <div class="form-group">
+              <label class="control-label">Number of reps:</label>
+              <input class="form-control" type="number" th:field="*{numberOfReps}"/>
+              <div th:if="${#fields.hasErrors('numberOfReps')}" th:errors="*{numberOfReps}">Number of reps error</div>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Weight used:</label>
+              <input class="form-control" type="number" th:field="*{weightUsed}"/>
+              <div th:if="${#fields.hasErrors('weightUsed')}" th:errors="*{weightUsed}">Weight used error</div>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Exercise name:</label>
+              <input class="form-control" type="text" th:field="*{exerciseName}"/>
+              <div th:if="${#fields.hasErrors('exerciseName')}" th:errors="*{exerciseName}">Exercise name error</div>
+            </div>
+            <div class="form-group">
+              <div>
+                <button class="btn btn-primary" name="submit" type="submit">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
